@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(fondojuguetes.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #9e51ad;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 80px;
+    height: auto;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    color:#9e5bad;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+main {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.producto {
+    border: 1px solid #333232;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.producto-imagen {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+}
+
+.reseñas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.reseña {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333232;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.reseña:hover {
+    transform: scale(1.05);
+}
+
+.reseña.centrada {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #9e51ad;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7e3b93;
+}
+
+footer {
+    background-color: #9e51ad;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
