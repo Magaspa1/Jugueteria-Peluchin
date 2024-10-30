@@ -1,10 +1,14 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Elsie Swash Caps', sans-serif;
     background-image: url(fondojuguetes.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: 'Elsie Swash Caps', sans-serif;
 }
 
 header {
