@@ -48,14 +48,14 @@ nav a:hover {
 
 .container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
     margin: 20px;
 }
 
 main {
     flex: 1;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
@@ -73,27 +73,24 @@ section {
     border: 1px solid #333232;
     border-radius: 5px;
     padding: 10px;
-    margin: 10px;
+    margin: 10px 0;
     text-align: center;
     overflow: hidden;
     transition: transform 0.3s;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
 }
 
 .producto-imagen {
-    width: 100%;
-    height: auto;
+    width: 100%;        
+    max-width: 100%; 
+    height: auto; 
     border-radius: 5px;
 }
 
 .producto:hover {
     transform: scale(1.05);
-}
-
-/* Carrito centrado */
-#carrito {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .reseñas-grid {
@@ -156,8 +153,25 @@ footer {
     padding: 10px;
 }
 
-/* Media Query para pantallas pequeñas (móviles) */
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Media Queries para pantallas menores a 500px */
 @media (max-width: 500px) {
+    .producto-imagen {
+        width: 100%;
+        height: auto;
+    }
+
     .producto {
         width: 100%;
         margin: 10px 0;
@@ -171,28 +185,8 @@ footer {
         width: 100%;
     }
 
-    form input, form textarea, form button {
         width: 100%;
         box-sizing: border-box;
     }
 }
 
-/* Media Query para pantallas medianas y grandes */
-@media (min-width: 501px) {
-    .producto {
-        width: calc(33.33% - 20px);
-        margin: 10px;
-    }
-
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    #carrito {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
