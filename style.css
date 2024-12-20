@@ -9,7 +9,6 @@ body {
 
 h1 {
     font-family: 'Elsie Swash Caps', sans-serif;
-    font-size: 2em;
 }
 
 header {
@@ -17,27 +16,22 @@ header {
     color: white;
     padding: 15px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .logo {
     max-width: 80px;
     height: auto;
     border-radius: 50%;
-    margin-bottom: 10px;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     text-align: center;
-    margin-top: 10px;
 }
 
 nav ul li {
-    display: inline-block;
+    display: inline;
     margin: 0 10px;
 }
 
@@ -83,15 +77,16 @@ section {
     text-align: center;
     overflow: hidden;
     transition: transform 0.3s;
-    width: 100%;
-    max-width: 500px;
-    margin: 10px auto;
+    width: 100%; 
+    max-width: 300px; 
+    box-sizing: border-box; 
 }
 
 .producto-imagen {
-    width: 100%;
-    height: auto;
-    max-width: 400px;
+    width: 100%;          
+    max-width: 100%;     
+    height: auto;         
+    border-radius: 5px;
 }
 
 .producto:hover {
@@ -158,51 +153,29 @@ footer {
     padding: 10px;
 }
 
-footer p {
-    margin: 5px 0;
-}
-
-/* Media Queries para pantallas pequeñas */
 @media (max-width: 500px) {
-    body {
-        padding: 10px;
-    }
-
-    .logo {
-        max-width: 60px;
-    }
-
-    h1 {
-        font-size: 1.5em;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        margin: 0;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-        display: block;
-        text-align: center;
+    .producto-imagen {
+        width: 100%;
+        height: auto;
     }
 
     .producto {
-        margin: 5px 0;
+        width: 100%;
+        margin: 10px 0;
     }
 
-    .producto-imagen {
-        max-width: 100%;
+    /* Asegura que la página se apile verticalmente */
+    .container {
+        flex-direction: column;
     }
 
-    footer {
-        font-size: 0.8em;
+    form {
+        width: 100%;
     }
 
-    footer p {
-        margin: 3px 0;
+    form input, form textarea, form button {
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
