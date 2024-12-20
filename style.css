@@ -176,9 +176,9 @@ footer {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     #productos {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns:1fr;
     }
 
     .container {
@@ -192,6 +192,6 @@ footer {
     }
 
     .logo {
-        max-width: 80px;
+        max-width: 80px; 
     }
 }
