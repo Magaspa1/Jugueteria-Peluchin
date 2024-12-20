@@ -77,16 +77,13 @@ section {
     text-align: center;
     overflow: hidden;
     transition: transform 0.3s;
-    width: 100%;
-    max-width: 300px;
-    box-sizing: border-box;
 }
 
 .producto-imagen {
-    width: 100%; 
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    height: auto; 
+    object-fit: cover;
 }
 
 .producto:hover {
@@ -127,7 +124,8 @@ form label {
     margin-top: 10px;
 }
 
-input, textarea {
+input,
+textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -162,29 +160,29 @@ footer {
     .container {
         flex-direction: column;
     }
+
+    .producto-imagen {
+        max-width: 200px; 
+    }
+
+    footer {
+        font-size: 14px;
 }
 
 @media (max-width: 500px) {
-    
     .producto-imagen {
-        width: 100%;
-        height: auto;
+        max-width: 150px;  
     }
 
-        width: 100%;
-        margin: 10px 0;
+    h1 {
+        font-size: 24px;
     }
 
-        flex-direction: column;
+    .reseña {
+        padding: 8px; 
     }
 
-    form {
-        width: 100%;
-    }
-
-    form input, form textarea, form button {
-        width: 100%;
-        box-sizing: border-box;
+    .reseña-grid {
+        grid-template-columns: 1fr;  
     }
 }
-
