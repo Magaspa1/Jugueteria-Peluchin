@@ -36,7 +36,7 @@ nav ul li {
 }
 
 nav a {
-    color:#9e5bad;
+    color: #9e5bad;
     font-family: 'Elsie Swash Caps', sans-serif;
     font-weight: bold;
     text-decoration: none;
@@ -149,14 +149,75 @@ footer {
     padding: 10px;
 }
 
-/* Media Queries */
-@media (max-width: 600px) {
+@media (max-width: 500px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .logo {
+        max-width: 60px;
+    }
+
+    nav ul {
+        padding: 0;
+        text-align: center;
+        margin: 0;
+    }
+
     nav ul li {
         display: block;
-        margin: 10px 0;
+        margin: 5px 0;
+    }
+
+    nav a {
+        font-size: 14px;
     }
 
     .container {
         flex-direction: column;
+    }
+
+    main {
+        padding: 10px;
+        width: 100%;
+    }
+
+    section {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .producto {
+        margin: 10px 0;
+        padding: 8px;
+    }
+
+    .producto-imagen {
+        max-width: 100%;
+    }
+
+    .reseñas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reseña {
+        padding: 8px;
+    }
+
+    form label, input, textarea, button {
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 5px;
+        font-size: 12px;
     }
 }
