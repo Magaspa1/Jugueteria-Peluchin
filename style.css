@@ -77,13 +77,15 @@ section {
     text-align: center;
     overflow: hidden;
     transition: transform 0.3s;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
 }
 
 .producto-imagen {
     width: 100%;
-    max-width: 300px;
-    height: auto; 
-    object-fit: cover;
+    height: auto;
+    max-width: 400px;
 }
 
 .producto:hover {
@@ -124,8 +126,7 @@ form label {
     margin-top: 10px;
 }
 
-input,
-textarea {
+input, textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -151,36 +152,41 @@ footer {
     padding: 10px;
 }
 
-@media (max-width: 600px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 500px) {
+    body {
+        padding: 10px;
+    }
+
+    .producto {
+        margin: 5px 0;
+    }
+
+    .producto-imagen {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5em;
     }
 
     .container {
         flex-direction: column;
     }
 
-    .producto-imagen {
-        max-width: 200px; 
+    nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
     }
 
     footer {
-        font-size: 14px;
+        font-size: 0.8em;
+    }
 }
-
-@media (max-width: 500px) {
-    .producto-imagen {
-        max-width: 150px;  
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    .reseña {
-        padding: 8px; 
-    }
 
     .reseña-grid {
         grid-template-columns: 1fr;  
