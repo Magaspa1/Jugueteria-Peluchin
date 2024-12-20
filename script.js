@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para mostrar productos
     const mostrarProductos = () => {
-        productosContainer.innerHTML = ""; // Limpiamos el contenedor
+        productosContainer.innerHTML = ""; // Limpia el contenedor
         productos.forEach((producto, index) => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('producto');
@@ -44,12 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para agregar productos al carrito
     const agregarAlCarrito = (index) => {
         const producto = productos[index];
-        // Verificamos si el producto ya está en el carrito
+        // Verifica si el producto ya está en el carrito
         const encontrado = carrito.find(item => item.nombre === producto.nombre);
         if (encontrado) {
-            encontrado.contador++; // Incrementamos el contador si ya está en el carrito
+            encontrado.contador++; // Incrementa el contador si ya está en el carrito
         } else {
-            // Si no está en el carrito, lo agregamos con contador 1
+            // Si no está en el carrito, se agregam con contador 1
             producto.contador = 1;
             carrito.push(producto);
         }
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para actualizar el carrito
     const actualizarCarrito = () => {
-        carritoContainer.innerHTML = ""; // Limpiamos el carrito
+        carritoContainer.innerHTML = ""; // Limpia el carrito
         let total = 0;
 
         if (carrito.length === 0) {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         let i = 0;
-        while (i < carrito.length) { // Bucle while para recorrer los productos del carrito
+        while (i < carrito.length) { // Bucle para recorrer los productos del carrito
             const producto = carrito[i];
             const carritoDiv = document.createElement('div');
             carritoDiv.classList.add('producto');
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             carritoContainer.appendChild(carritoDiv);
 
             total += producto.precio * producto.contador;
-            i++; // Incrementamos el índice para el bucle while
+            i++; // Incrementa el índice para el bucle while
         }
 
         // Mostrar el total
