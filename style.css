@@ -47,13 +47,12 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* Contenedor principal */
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px auto;
-    max-width: 1200px;
-    padding: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
 }
 
 main {
@@ -88,7 +87,6 @@ section {
     text-align: center;
     transition: transform 0.3s;
     width: 80%;
-}
 
 
 .producto:hover {
@@ -97,7 +95,7 @@ section {
 
 .producto-imagen {
     width: 100%;
-    max-width: 200px;
+    max-width: 200px; /* Evita que las imágenes sean demasiado grandes */
     height: auto;
     margin: 0 auto 10px;
     border-radius: 5px;
@@ -190,6 +188,12 @@ footer {
     .producto {
         padding: 10px;
     }
+
+    .logo {
+        max-width: 80px;
+    }
+}
+
 
     .logo {
         max-width: 80px; 
