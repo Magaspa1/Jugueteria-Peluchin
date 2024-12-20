@@ -57,6 +57,7 @@ nav a:hover {
 }
 
 main {
+    flex: 1;
     width: 100%;
     max-width: 1200px; /* Centra y limita el ancho del contenido */
     margin: 0 auto;
@@ -134,7 +135,6 @@ form label {
     margin-top: 10px;
 }
 
-/* Carrito */
 #carrito {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -164,12 +164,11 @@ button:hover {
     background-color: #7e3b93;
 }
 
-/* Footer */
 footer {
     background-color: #9e51ad;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     margin-top: 20px;
 }
 
