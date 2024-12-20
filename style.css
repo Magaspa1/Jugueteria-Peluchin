@@ -16,12 +16,10 @@ header {
     color: white;
     padding: 15px;
     text-align: center;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .logo {
-    max-width: 100px;
+    max-width: 80px;
     height: auto;
     border-radius: 50%;
 }
@@ -48,13 +46,19 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Contenedor principal */
 .container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 20px;
-    gap: 20px;
+}
+
+main {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
 }
 
 section {
@@ -63,8 +67,6 @@ section {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .producto {
@@ -81,9 +83,9 @@ section {
 }
 
 .producto-imagen {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+    width: 100%;        
+    max-width: 100%; 
+    height: auto; 
     border-radius: 5px;
 }
 
@@ -91,7 +93,6 @@ section {
     transform: scale(1.05);
 }
 
-/* Reseñas */
 .reseñas-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -117,7 +118,6 @@ section {
     text-align: center;
 }
 
-/* Formulario */
 form {
     display: flex;
     flex-direction: column;
@@ -146,20 +146,35 @@ button:hover {
     background-color: #7e3b93;
 }
 
-/* Footer */
 footer {
     background-color: #9e51ad;
     color: white;
     text-align: center;
     padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
 }
 
-@media (max-width: 799px) {
-    #productos, #carrito {
-        max-width: 100%;
-        margin-bottom: 20px;
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Media Queries para pantallas menores a 500px */
+@media (max-width: 500px) {
+    .producto-imagen {
+        width: 100%;
+        height: auto;
+    }
+
+    .producto {
+        width: 100%;
+        margin: 10px 0;
     }
 
     .container {
@@ -169,21 +184,4 @@ footer {
     form {
         width: 100%;
     }
-
-    form input, form textarea, form button {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    header, footer {
-        width: 100%;
-    }
-}
-
-@media (min-width: 800px) {
-    #productos, #carrito {
-        flex: 1; 
-        max-width: 45%;
-    }
-}
 
