@@ -20,7 +20,7 @@ header {
 }
 
 .logo {
-    max-width: 100px;
+    max-width: 80px;
     height: auto;
     border-radius: 50%;
 }
@@ -32,7 +32,7 @@ nav ul {
 }
 
 nav ul li {
-    display: inline-block;
+    display: inline;
     margin: 0 10px;
 }
 
@@ -57,11 +57,11 @@ nav a:hover {
 }
 
 main {
-    width: 100%;
-    max-width: 1200px; 
+    flex: 1;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
+    text-align: center
 }
 
 section {
