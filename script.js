@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         productos.forEach((producto, index) => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('producto');
-            
             productoDiv.innerHTML = `
                 <h3>${producto.nombre}</h3>
                 <img src="${producto.imagen}" alt="${producto.nombre}" class="producto-imagen">
@@ -45,7 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para agregar productos al carrito
     const agregarAlCarrito = (index) => {
         const producto = productos[index];
-        carrito.push(producto); // Agregamos el producto al carrito
+        // Verificamos si el producto ya está en el carrito
+        const encontrado = carrito.find(item => item.nombre === producto.nombre);
+        if (encontrado) {
+            encontrado.contador++; // Incrementamos el contador si ya está en el carrito
+        } else {
+            // Si no está en el carrito, lo agregamos con contador 1
+            producto.contador = 1;
+            carrito.push(producto);
+        }
         actualizarCarrito();
     };
 
@@ -59,19 +66,22 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        carrito.forEach((producto, index) => {
+        let i = 0;
+        while (i < carrito.length) { // Bucle while para recorrer los productos del carrito
+            const producto = carrito[i];
             const carritoDiv = document.createElement('div');
             carritoDiv.classList.add('producto');
-            
             carritoDiv.innerHTML = `
                 <h3>${producto.nombre}</h3>
-                <p>Precio: $${producto.precio.toFixed(2)}</p>
-                <button class="eliminar-carrito" data-index="${index}">Eliminar</button>
+                <p>Precio: $${(producto.precio * producto.contador).toFixed(2)}</p>
+                <p>Cantidad: ${producto.contador}</p>
+                <button class="eliminar-carrito" data-index="${i}">Eliminar</button>
             `;
             carritoContainer.appendChild(carritoDiv);
 
-            total += producto.precio; // Sumamos el precio al total
-        });
+            total += producto.precio * producto.contador;
+            i++; // Incrementamos el índice para el bucle while
+        }
 
         // Mostrar el total
         const totalDiv = document.createElement('div');
@@ -102,6 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Inicializar la página
+    // Iniciar la página
     mostrarProductos();
 });
