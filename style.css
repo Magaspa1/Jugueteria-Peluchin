@@ -176,38 +176,35 @@ footer {
     margin-top: 20px;
 }
 
-@media (max-width: 700px) {
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 600px) {
     nav ul li {
         display: block;
         margin: 10px 0;
     }
 
     .container {
-        padding: 10px;
-    }
-
-    #productos {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 }
 
+/* Media Queries para pantallas menores a 500px */
 @media (max-width: 500px) {
     .producto-imagen {
-        max-width: 150px; 
+        width: 100%;
+        height: auto;
     }
 
     .producto {
-        padding: 10px;
-    }
-
-    form input, form textarea, form button {
-        font-size: 14px; /* Ajusta el texto */
-    }
-}
-
-
-    form input, form textarea, form button {
         width: 100%;
-        box-sizing: border-box;
+        margin: 10px 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    form {
+        width: 100%;
     }
 }
