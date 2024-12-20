@@ -1,4 +1,3 @@
-/* General */
 body {
     margin: 0;
     font-family: 'Elsie Swash Caps', sans-serif;
@@ -48,7 +47,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Contenedor principal */
 .container {
     display: flex;
     flex-direction: column; /* Todo en columna para evitar desbordes */
@@ -58,7 +56,6 @@ nav a:hover {
     padding: 10px;
 }
 
-/* Secciones principales */
 main {
     width: 100%;
     max-width: 1200px; /* Centra y limita el ancho del contenido */
@@ -75,7 +72,6 @@ section {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Productos */
 #productos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Distribución adaptable */
@@ -92,7 +88,6 @@ section {
     transition: transform 0.3s;
     width: 80%;  /* Asegura que los productos ocupen el 100% del contenedor */
 }
-
 
 .producto:hover {
     transform: scale(1.05);
@@ -195,6 +190,6 @@ footer {
     }
 
     .logo {
-        max-width: 80px; /* Reduce el tamaño del logo en pantallas pequeñas */
+        max-width: 80px;
     }
 }
