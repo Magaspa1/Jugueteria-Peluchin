@@ -183,6 +183,19 @@ footer {
     }
 }
 
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Media Queries para pantallas menores a 500px */
 @media (max-width: 500px) {
     .producto-imagen {
         width: 100%;
@@ -193,7 +206,7 @@ footer {
         width: 100%;
         margin: 10px 0;
     }
-
+    
     .container {
         flex-direction: column;
     }
@@ -201,3 +214,9 @@ footer {
     form {
         width: 100%;
     }
+
+    form input, form textarea, form button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
