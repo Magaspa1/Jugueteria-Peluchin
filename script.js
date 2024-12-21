@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (encontrado) {
             encontrado.contador++; // Incrementa el contador si ya está en el carrito
         } else {
-            // Si no está en el carrito, se agregam con contador 1
+            // Si no está en el carrito, se agrega con contador 1
             producto.contador = 1;
             carrito.push(producto);
         }
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         let i = 0;
-        while (i < carrito.length) { // Bucle para recorrer los productos del carrito
+        while (i < carrito.length) { // Bucle while para recorrer los productos del carrito
             const producto = carrito[i];
             const carritoDiv = document.createElement('div');
             carritoDiv.classList.add('producto');
@@ -79,8 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             carritoContainer.appendChild(carritoDiv);
 
-            total += producto.precio * producto.contador;
-            i++; // Incrementa el índice para el bucle while
+            total += producto.precio * producto.contador; 
+
+            i++; 
         }
 
         // Mostrar el total
@@ -88,11 +89,24 @@ document.addEventListener('DOMContentLoaded', () => {
         totalDiv.classList.add('total');
         totalDiv.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
         carritoContainer.appendChild(totalDiv);
+
+        // Agregar botón de pagar si el carrito no está vacío
+        const botonPagar = document.createElement('button');
+        botonPagar.classList.add('pagar');
+        botonPagar.innerHTML = "Pagar";
+        carritoContainer.appendChild(botonPagar);
+
+        // Agregar evento al botón de pagar
+        botonPagar.addEventListener('click', () => {
+            alert(`¡Gracias por tu compra! Total: $${total.toFixed(2)}`);
+            carrito.length = 0; 
+            actualizarCarrito(); 
+        });
     };
 
     // Función para eliminar productos del carrito
     const eliminarDelCarrito = (index) => {
-        carrito.splice(index, 1); // Elimina el producto en el índice indicado
+        carrito.splice(index, 1); 
         actualizarCarrito();
     };
 
@@ -115,3 +129,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Iniciar la página
     mostrarProductos();
 });
+
